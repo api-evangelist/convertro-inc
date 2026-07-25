@@ -1,8 +1,24 @@
 aid: convertro-inc
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/convertro-inc.png
 name: Convertro, Inc.
-description: 'Convertro, Inc. is a company surfaced as a portfolio company of bessemer-venture-partners
-  and added to the API Evangelist network as a stub for enrichment. Sector: cloud. This profile is a lead
-  awaiting the enrichment pipeline.'
+description: 'Convertro, Inc. was a marketing analytics company based in Santa Monica, California,
+  providing a multi-touch attribution platform that measured the ROI of marketing touchpoints across
+  online and offline media using algorithmic attribution models. Backed by Bessemer Venture Partners,
+  Convertro was acquired by AOL in 2014 and folded into the AOL/Verizon (now Yahoo) advertising stack.
+  It no longer operates an independent public developer surface: convertro.com redirects to yahooinc.com,
+  and no developer portal, documentation, API, or reachable API host was found during enrichment. This
+  profile is retained as a network record; there is no live provider API surface to enrich.'
 url: https://raw.githubusercontent.com/api-evangelist/convertro-inc/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,13 +28,24 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+x-status: acquired
+x-status-note: Acquired by AOL in 2014; now part of Yahoo. No independent public API surface.
 tags:
 - Company
-- Cloud
+- Marketing
+- Attribution
+- Analytics
+- Advertising
+- Marketing Technology
 apis: []
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
