@@ -28,7 +28,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-18'
+modified: '2026-08-12'
 x-status: acquired
 x-status-note: Acquired by AOL in 2014; now part of Yahoo. No independent public API surface.
 tags:
@@ -39,13 +39,52 @@ tags:
 - Advertising
 - Marketing Technology
 apis: []
+common:
+- type: Packages
+  url: packages/convertro-inc-packages.yml
+  name: Client Libraries (none first-party)
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-12'
+  status: nochange
+  artifacts_added: 2
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+  note: >-
+    Full pass re-run. Contract discovery (STEP 0b) probed 11 paths on convertro.com
+    including every /.well-known/ location, /openapi.json, /swagger.json and /llms.txt;
+    all 301 to the acquirer's corporate homepage. No first-party package, GitHub org,
+    developer portal, docs host or API host exists. Two recorded-absence artifacts
+    written (well-known probe, packages); no scoring pointer emitted beyond the
+    artifact-native Packages type, because nothing is genuinely served.
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Convertro was acquired by AOL in 2014 and fully absorbed into the Verizon Media /
+    Yahoo ad stack; its last remaining asset, convertro.com, is a bare 301 to
+    verizonmedia.com that lands on the Yahoo Inc. corporate homepage, and no api.,
+    docs., developer. or www. subdomain resolves to a live service.
+  evidence:
+  - url: https://convertro.com/
+    status: 301
+  - url: https://www.yahooinc.com/
+    status: 200
+  - url: https://convertro.com/openapi.json
+    status: 301
+  - url: https://convertro.com/.well-known/api-catalog
+    status: 301
+  - url: https://api.convertro.com/
+    status: 0
+  - url: https://docs.convertro.com/
+    status: 0
+  - url: https://developer.convertro.com/
+    status: 0
+  - url: https://pypi.org/pypi/convertro/json
+    status: 404
+  - url: https://rubygems.org/api/v1/gems/convertro.json
+    status: 404
+  checked: '2026-08-12'

@@ -1,0 +1,104 @@
+generated: '2026-08-12'
+method: probed
+source: https://convertro.com/
+name: Convertro, Inc. — .well-known probe
+description: >-
+  Recorded absence. Convertro, Inc. operates no host of its own. Its only surviving
+  domain, convertro.com, answers HTTP 301 on every path — including every /.well-known/
+  path — and the redirect chain terminates at https://www.yahooinc.com/, the acquirer's
+  corporate homepage. Every probed path therefore "succeeds" with HTTP 200 while
+  returning the identical 56,282-byte Yahoo Inc. marketing HTML document. That is a
+  redirect catch-all, not a served document, so NONE of these paths count as a hit and
+  NO WellKnown, SecurityTxt or AgentCard pointer is emitted in apis.yml.
+host: convertro.com
+host_note: >-
+  convertro.com resolves to 76.223.84.192 / 13.248.158.7 (AWS Global Accelerator,
+  oath.cloud) and 301s to https://www.verizonmedia.com/, which in turn lands on
+  https://www.yahooinc.com/. No api., docs., developer. or www. subdomain serves a
+  response (www.convertro.com resolves via rc.yahoo.com but the TLS handshake fails).
+soft_200: true
+soft_200_evidence:
+  final_url: https://www.yahooinc.com/
+  content_type: text/html; charset=utf-8
+  size_bytes: 56282
+  identical_body_on_every_path: true
+paths:
+- path: /.well-known/security.txt
+  status: 301
+  followed_status: 200
+  hit: false
+  file: null
+  note: 301 to the acquirer homepage; no security.txt served.
+- path: /.well-known/openid-configuration
+  status: 301
+  followed_status: 200
+  hit: false
+  file: null
+  note: 301 to the acquirer homepage; no OIDC discovery document served.
+- path: /.well-known/oauth-authorization-server
+  status: 301
+  followed_status: 200
+  hit: false
+  file: null
+  note: 301 to the acquirer homepage; no authorization-server metadata served.
+- path: /.well-known/api-catalog
+  status: 301
+  followed_status: 200
+  hit: false
+  file: null
+  note: 301 to the acquirer homepage; no RFC 9727 linkset served.
+- path: /.well-known/ai-plugin.json
+  status: 301
+  followed_status: 200
+  hit: false
+  file: null
+  note: 301 to the acquirer homepage; no plugin manifest served.
+- path: /.well-known/agent-card.json
+  status: 301
+  followed_status: 200
+  hit: false
+  file: null
+  note: >-
+    301 to the acquirer homepage; the 200 body is HTML, not a JSON AgentCard object.
+    No AgentCard pointer emitted.
+- path: /.well-known/agent.json
+  status: 301
+  followed_status: 200
+  hit: false
+  file: null
+  note: Legacy pre-0.3 agent card path. Same redirect catch-all; not a card.
+- path: /openapi.json
+  status: 301
+  followed_status: 200
+  hit: false
+  file: null
+  note: Body is <!DOCTYPE html>, not an OpenAPI document.
+- path: /swagger.json
+  status: 301
+  followed_status: 200
+  hit: false
+  file: null
+  note: Body is <!DOCTYPE html>, not a Swagger document.
+- path: /llms.txt
+  status: 301
+  followed_status: 200
+  hit: false
+  file: null
+  note: Body is HTML, not an llms.txt.
+- path: /robots.txt
+  status: 301
+  followed_status: 200
+  hit: false
+  file: null
+  note: Body is HTML, not a robots.txt.
+hit_count: 0
+probe_count: 11
+pointers_emitted: []
+pointers_withheld:
+- WellKnown
+- SecurityTxt
+- AgentCard
+pointers_withheld_reason: >-
+  Every 200 is a redirect landing page for a different company. A pointer would assert
+  that Convertro serves these surfaces; it serves none of them.
+checked: '2026-08-12'

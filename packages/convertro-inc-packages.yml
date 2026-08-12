@@ -1,0 +1,52 @@
+generated: '2026-08-12'
+method: searched
+source: https://registry.npmjs.org/-/v1/search?text=convertro
+name: Convertro, Inc. — client libraries
+description: >-
+  Convertro publishes no first-party SDK or client library in any public registry. npm,
+  PyPI, RubyGems and the GitHub org were all searched; the single surviving code artifact
+  that names Convertro is a THIRD-PARTY integration shim published by Segment, not by
+  Convertro. It is recorded here as decay evidence, not as an SDK. No `SDKs` pointer is
+  emitted in apis.yml, because first_party_count is 0.
+first_party_count: 0
+third_party_count: 1
+registries_searched:
+- registry: npm
+  endpoint: https://registry.npmjs.org/-/v1/search?text=convertro
+  status: 200
+  first_party_matches: 0
+  note: One third-party match (Segment integration shim), recorded below.
+- registry: pypi
+  endpoint: https://pypi.org/pypi/convertro/json
+  status: 404
+  first_party_matches: 0
+- registry: rubygems
+  endpoint: https://rubygems.org/api/v1/gems/convertro.json
+  status: 404
+  first_party_matches: 0
+- registry: github
+  endpoint: https://github.com/convertro
+  status: 503
+  first_party_matches: 0
+  note: >-
+    No `convertro` or `convertro-inc` GitHub organization resolves; github.com/convertro
+    answered 503 and github.com/convertro-inc did not connect. No published repositories
+    were found under any Convertro-owned org.
+packages:
+- name: '@segment/analytics.js-integration-convertro'
+  registry: npm
+  url: https://www.npmjs.com/package/@segment/analytics.js-integration-convertro
+  language: javascript
+  official: false
+  publisher: Segment (segmentio)
+  repository: https://github.com/segmentio/analytics.js-integrations
+  description: The Convertro analytics.js integration.
+  version: 2.1.3
+  published: '2021-07-05'
+  note: >-
+    Third-party. Segment's client-side shim that loaded the Convertro tracking tag from a
+    Segment page; it is not a Convertro-authored SDK and does not wrap a Convertro API.
+    Its last release (2021-07-05) postdates the 2014 AOL acquisition by seven years and
+    predates this probe by five, which is the clearest dated evidence available that no
+    Convertro client surface has been maintained by anyone.
+checked: '2026-08-12'
