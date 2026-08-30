@@ -51,6 +51,11 @@ tags:
 - Marketing Technology
 apis: []
 common:
+- type: ParentCompany
+  url: https://apis.io/providers/aol/
+  name: AOL
+  x-relationship: acquired
+  x-evidence: "Backed by Bessemer Venture Partners, Convertro was acquired by AOL in 2014 and folded into the AOL/Verizon (now Yahoo) advertising stack."
 - type: Packages
   url: packages/convertro-inc-packages.yml
   name: Client Libraries (none first-party)
